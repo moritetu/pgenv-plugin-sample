@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+set -eu
+
+source "$PGENV_LIBEXEC"/pgenv--load
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    -v|--version)
+      echo "version 0.1"
+      ;;
+    -*)
+      abort "error: $(self): invalid option: $1"
+      ;;
+    *)
+      ;;
+  esac
+  shift
+done
+
+
+
+#=begin COMMAND
+#
+# sample      Sample plugins
+#
+#=end COMMAND
+
+#=begin HELP
+#
+# Usage: pgenv sample [-v|--version <version>]
+#
+# Sample plugin
+#
+#
+# SYNOPSIS
+#   pgenv sample -v
+#
+#
+# OPTIONS
+#   -v, --version <version>
+#     Export version. Default is current version.
+#
+#
+#=end HELP
